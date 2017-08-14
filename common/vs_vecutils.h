@@ -11,7 +11,7 @@ T vecMin(const std::vector<T> &a)
 	T m = 0;
 	if (a.empty()) return m;
 	m = a[0];
-	for (int i = 0; i < a.size(); i++)
+	for (size_t i = 0; i < a.size(); i++)
 	{
 		m = a[i] < m ? a[i] : m;
 	}
@@ -25,7 +25,7 @@ T vecMax(const std::vector<T> &a)
 	T m = 0;
 	if (a.empty()) return m;
 	m = a[0];
-	for (int i = 0; i<a.size(); i++)
+	for (size_t i = 0; i<a.size(); i++)
 	{
 		m = a[i]>m ? a[i] : m;
 	}
@@ -36,7 +36,7 @@ T vecMax(const std::vector<T> &a)
 template <class T>
 bool vecAllZero(const std::vector<T> &a)
 {
-	for (int i = 0; i<a.size(); i++){
+	for (size_t i = 0; i<a.size(); i++){
 		if (fabs((double)a[i])>1e-8) return false;
 	}
 	return true;
@@ -58,9 +58,9 @@ T findKth(const std::vector<T> &vec, int k)
 template<class T>
 T vecSum(const std::vector<T>& vec)
 {
-	T sum_a = 0;
+	T sum_a = T(0);
 	if (vec.empty()){ return sum_a; }
-	for (int i = 0; i < vec.size(); i++){
+	for (size_t i = 0; i < vec.size(); i++){
 		sum_a = sum_a + vec[i];
 	}
 	return sum_a;
@@ -69,9 +69,9 @@ T vecSum(const std::vector<T>& vec)
 template<class T>
 T vecMean(const std::vector<T> &vec)
 {
-	T a = 0;
+	T a = T(0);
 	if (vec.empty()) return a;
-	T s = sum(vec);
+	T s = vecSum(vec);
 	return s * (1.0 / vec.size());
 }
 
@@ -80,7 +80,7 @@ template<class T>
 void vecNormalize(std::vector<T> &vec)
 {
 	if (vec.empty())return;
-	T sumVec = sum(vec);
+	T sumVec = vecSum(vec);
 	if (sumVec == 0) return;
 	for (typename std::vector<T>::iterator it = vec.begin(); it < vec.end(); it++)
 	{

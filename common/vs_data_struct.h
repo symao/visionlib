@@ -25,7 +25,7 @@ Once data is out of queue size(max_len), delete the oldest data.
 template <class T>
 class FixedQueue : public std::deque<T>{
 public:
-	FixedQueue(int maxLen = 1) :std::deque<T>(), max_len_(maxLen){}
+	FixedQueue(unsigned int maxLen = 1) :std::deque<T>(), max_len_(maxLen){}
 
 	void push(const T& a){
 		this->push_back(a);
@@ -34,7 +34,7 @@ public:
 		}
 	}
 private:
-	int max_len_;
+	unsigned int max_len_;
 };
 
 

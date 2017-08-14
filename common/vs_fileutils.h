@@ -10,9 +10,12 @@ bool exist(const std::string& file);
 /** \brief judge a directory whether exist.*/
 bool existDir(const std::string & path);
 
+/** \brief judge a directory whether write permission.*/
+bool writePermissionDir(const std::string & path);
+
 /** \brief create a directory.*/
 void createDir(const std::string & path);
 
-std::vector<std::string> listDir(const std::string & path);
+// std::vector<std::string> listDir(const std::string & path);
 
 #endif
