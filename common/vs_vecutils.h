@@ -95,7 +95,7 @@ void vecStatistics(const std::vector<T> &vec, T& mean_, T& variance)
 	mean_ = 0;
 	variance = 0;
 	if (vec.empty()) return;
-	mean_ = mean(vec);
+	mean_ = vecMean(vec);
 	if (vec.size() == 1)return;
 	for (typename std::vector<T>::const_iterator it = vec.begin(); it < vec.end(); it++)
 		variance += (*it - mean_)*(*it - mean_);
