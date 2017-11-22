@@ -33,20 +33,20 @@ std::vector<double> str2vec(const std::string& s);
 template <typename T>
 std::string num2str(T a)
 {
-	std::stringstream ss;
-	ss << a;
-	return ss.str();
+    std::stringstream ss;
+    ss << a;
+    return ss.str();
 }
 
 /** \brief convert a string to number of object which overload operate >> */
 template <typename T>
 T str2num(const std::string &a)
 {
-	T res;
-	std::stringstream ss;
-	ss << a;
-	ss >> res;
-	return res;
+    T res;
+    std::stringstream ss;
+    ss << a;
+    ss >> res;
+    return res;
 }
 
 

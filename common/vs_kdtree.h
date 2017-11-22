@@ -1,8 +1,8 @@
 /** \file
-	\brief KD-Tree implemention file
-	\author NanJiang Robot Inc.
-	\date 2016-02-26
-	\version 0.0.1
+    \brief KD-Tree implemention file
+    \author symao(maoshuyuan123@gmail.com)
+    \date 2016-02-26
+    \version 0.0.1
 */
 #ifndef __VS_KDTREE_H__
 #define __VS_KDTREE_H__

@@ -175,8 +175,8 @@ if ((u-l) <= bucketsize) {
     if (true) {
         sum = 0.0;
         for (int k=l; k <= u; k++) {
-			assert(c>=0);
-			sum += the_data[ind[k]][c];
+            assert(c>=0);
+            sum += the_data[ind[k]][c];
         }
         average = sum / static_cast<float> (u-l+1);
     } else {

@@ -11,7 +11,7 @@ Eg:vector<vector<int> > array2d = Array2D<int>(rows,cols);
 template <class T>
 class Array2D : public std::vector<std::vector<T> >{
 public:
-	Array2D(int rows = 0, int cols = 0, const T& val = T()) :std::vector<std::vector<T> >(rows, std::vector<T>(cols, val)){}
+    Array2D(int rows = 0, int cols = 0, const T& val = T()) :std::vector<std::vector<T> >(rows, std::vector<T>(cols, val)){}
 };
 
 typedef Array2D<double> Array2Dd;
@@ -25,16 +25,16 @@ Once data is out of queue size(max_len), delete the oldest data.
 template <class T>
 class FixedQueue : public std::deque<T>{
 public:
-	FixedQueue(unsigned int maxLen = 1) :std::deque<T>(), max_len_(maxLen){}
+    FixedQueue(unsigned int maxLen = 1) :std::deque<T>(), max_len_(maxLen){}
 
-	void push(const T& a){
-		this->push_back(a);
-		if (this->size()>max_len_){
-			this->pop_front();
-		}
-	}
+    void push(const T& a){
+        this->push_back(a);
+        if (this->size()>max_len_){
+            this->pop_front();
+        }
+    }
 private:
-	unsigned int max_len_;
+    unsigned int max_len_;
 };
 
 
@@ -43,16 +43,16 @@ template<class T>
 class MedFilter
 {
 public:
-	MedFilter(int k = 1) :step_(k), data_(k){}
-	void input(const T & a){
-		data_.push(a);
-	}
-	T output(){
-		return findKth(data_, data_.size() / 2);
-	}
+    MedFilter(int k = 1) :step_(k), data_(k){}
+    void input(const T & a){
+        data_.push(a);
+    }
+    T output(){
+        return findKth(data_, data_.size() / 2);
+    }
 private:
-	int step_;
-	FixedQueue<T> data_;
+    int step_;
+    FixedQueue<T> data_;
 };
 
 
